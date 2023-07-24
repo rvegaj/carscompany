@@ -8,8 +8,8 @@
 		<version>2.7.13</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.nisumcompany</groupId>
-	<artifactId>workshopusers</artifactId>
+	<groupId>com.carscompany</groupId>
+	<artifactId>workshopcars</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>workshopCARS</name>
 	<description>Ejercicio auth crud cars</description>

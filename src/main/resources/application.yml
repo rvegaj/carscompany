@@ -3,21 +3,17 @@ spring:
     active: dev
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5432/carscompany
+    url: jdbc:postgresql://localhost:5432/carsproject
     username: postgres
     password: admin
   jpa:
     show-sql: true
-    generate-ddl: true
-    hibernate:
-      ddl-auto: update
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
 
   jwt:
     secret: Q2xhdmVTZWNyZXRhMjAyM0RlbW9zU2VjdXRpcnkkJA==
     expiration: 28800000
-
-server:
-  port: 8082
