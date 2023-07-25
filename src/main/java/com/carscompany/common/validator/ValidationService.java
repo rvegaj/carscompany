@@ -1,7 +1,6 @@
 package com.carscompany.common.validator;
 
 import com.carscompany.common.Constants;
-import com.carscompany.dto.UserDto;
 import com.carscompany.infraestructure.web.exceptions.ExceptionRequestInvalid;
 import java.util.Set;
 import javax.annotation.PostConstruct;

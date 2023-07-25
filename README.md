@@ -24,5 +24,4 @@ Los api creados son:
 Se  utilizó un controller Advice para la captura y  personalización de las excepciones
 
 
-Se puede consultar el enlace de OpenID - Swagger para observar las estructuras Request y response de cada servicio.
-http://localhost:8080/swagger-ui/index.html
+Algunas constantes se colocaron en el Archivo properties, sin embargo se pueden almacenar en archivos externos protegidos como buena practica.

@@ -3,10 +3,8 @@ package com.carscompany.dao;
 import com.carscompany.model.Trip;
 import java.util.List;
 import java.util.Optional;
-import org.apache.catalina.LifecycleState;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
-import org.springframework.data.repository.query.Param;
 
 public interface TripRepository extends CrudRepository<Trip, Long> {
   Optional<Trip> findTripsByEmployeeIdIdAndCarIdId(Long employeeId, Long carId);

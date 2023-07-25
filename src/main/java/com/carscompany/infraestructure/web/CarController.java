@@ -1,7 +1,6 @@
 package com.carscompany.infraestructure.web;
 
 import com.carscompany.dto.CarDto;
-import com.carscompany.dto.EmployeeDto;
 import com.carscompany.service.CarService;
 import java.util.List;
 import org.springframework.http.HttpStatus;

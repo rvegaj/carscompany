@@ -1,9 +1,7 @@
 package com.carscompany.mapper;
 
 import com.carscompany.dto.CarDto;
-import com.carscompany.dto.EmployeeDto;
 import com.carscompany.model.Car;
-import com.carscompany.model.Employee;
 import java.util.List;
 import lombok.Generated;
 import org.mapstruct.InheritInverseConfiguration;
