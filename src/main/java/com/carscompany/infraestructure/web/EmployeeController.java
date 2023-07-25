@@ -31,7 +31,6 @@ public class EmployeeController {
 
   @GetMapping(value = "/employees")
   public ResponseEntity<List<EmployeeDto>> getAllEmployees(){
-    employeeService.getAllEmployees();
     return new ResponseEntity<>(employeeService.getAllEmployees(), HttpStatus.OK);
   }
 

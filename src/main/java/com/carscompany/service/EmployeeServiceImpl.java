@@ -3,6 +3,7 @@ package com.carscompany.service;
 import com.carscompany.dao.EmployeeRepository;
 import com.carscompany.dto.EmployeeDto;
 import com.carscompany.mapper.EmployeeMapper;
+import com.carscompany.model.Car;
 import com.carscompany.model.Employee;
 import java.util.List;
 import java.util.Optional;
@@ -43,5 +44,10 @@ public class EmployeeServiceImpl implements EmployeeService{
     } else
       return "Empleado a eliminar no existe en la base de datos";
 
+  }
+  @Override
+  public EmployeeDto getEmployee(Long id) {
+    Optional<Employee> response = employeeRepository.findById(id);
+    return response.map(employeeMapper::employeeModelToEmployeeDto).orElse(null);
   }
 }
