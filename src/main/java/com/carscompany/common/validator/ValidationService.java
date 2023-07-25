@@ -22,14 +22,14 @@ public class ValidationService {
     var factory = Validation.buildDefaultValidatorFactory();
     validator = factory.getValidator();
   }
-  public void validationRequest (UserDto userDto){
+  public void validationRequest (Object request){
     ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
     Validator validator = factory.getValidator();
-    Set<ConstraintViolation<UserDto>> errores = validator.validate(userDto);
+    Set<ConstraintViolation<Object>> errores = validator.validate(request);
 
-    for (ConstraintViolation<UserDto> error : errores) {
+    for (ConstraintViolation<Object> error : errores) {
       log.info(error.getMessage());
-      throw new ExceptionRequestInvalid(Constants.MESSAGE_ERROR_REQUEST_INVALID);
+      throw new ExceptionRequestInvalid(Constants.MESSAGE_ERROR_REQUEST_INVALID+error.getMessage());
     }
   }
 

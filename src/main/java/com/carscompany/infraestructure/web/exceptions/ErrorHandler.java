@@ -16,13 +16,13 @@ public class ErrorHandler  extends ResponseEntityExceptionHandler {
     log.error("Request: " + req.getRequestURL());
   }
 
-  @ExceptionHandler(ExceptionUserExists.class)
-  public ResponseEntity<ErrorResponse> methodEmailExistsException(HttpServletRequest request, ExceptionUserExists e) {
+  @ExceptionHandler(ExceptionInvalidCredentials.class)
+  public ResponseEntity<ErrorResponse> methodInvalidCredentialException(HttpServletRequest request, ExceptionInvalidCredentials e) {
     this.printErrorRequest(request);
     ErrorResponse errorResponse = new ErrorResponse();
     errorResponse.setMessage(e.getMessage());
 
-    return new ResponseEntity<>(errorResponse, HttpStatus.CONFLICT);
+    return new ResponseEntity<>(errorResponse, HttpStatus.UNAUTHORIZED);
 
   }
 
@@ -33,6 +33,21 @@ public class ErrorHandler  extends ResponseEntityExceptionHandler {
     errorResponse.setMessage(e.getMessage());
 
     return new ResponseEntity<>(errorResponse, HttpStatus.BAD_REQUEST);
+  }
+
+  @ExceptionHandler(ExceptionDataQuery.class)
+  public ResponseEntity<ErrorResponse> methodQueryDataException(HttpServletRequest request, ExceptionRequestInvalid e) {
+    this.printErrorRequest(request);
+    ErrorResponse errorResponse = new ErrorResponse();
+    errorResponse.setMessage(e.getMessage());
+    return new ResponseEntity<>(errorResponse, HttpStatus.INTERNAL_SERVER_ERROR);
+  }
+  @ExceptionHandler(ExceptionDataConflict.class)
+  public ResponseEntity<ErrorResponse> methodQueryDataException(HttpServletRequest request, ExceptionDataConflict e) {
+    this.printErrorRequest(request);
+    ErrorResponse errorResponse = new ErrorResponse();
+    errorResponse.setMessage(e.getMessage());
+    return new ResponseEntity<>(errorResponse, HttpStatus.CONFLICT);
   }
 
 }

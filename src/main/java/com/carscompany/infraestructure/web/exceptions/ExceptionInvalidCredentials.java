@@ -3,7 +3,7 @@ package com.carscompany.infraestructure.web.exceptions;
 import lombok.Getter;
 
 @Getter
-public class ExceptionUserExists extends RuntimeException{
+public class ExceptionInvalidCredentials extends RuntimeException{
 
     /**
      *
@@ -11,7 +11,7 @@ public class ExceptionUserExists extends RuntimeException{
     private static final long serialVersionUID = 1L;
     private String message;
 
-    public ExceptionUserExists(String exception){
+    public ExceptionInvalidCredentials(String exception){
       super(exception);
       this.message = exception;
     }

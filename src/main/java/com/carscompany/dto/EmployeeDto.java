@@ -1,6 +1,7 @@
 package com.carscompany.dto;
 
-import com.carscompany.model.Trip;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -12,6 +13,8 @@ import lombok.NoArgsConstructor;
 @Builder
 public class EmployeeDto {
   private Long id;
+  @NotBlank(message = "El nombre del empleado es requerido")
+  @NotNull(message = "El nombre del empleado es requerido")
   private String nameEmployee;
   private String registrationCar;
 

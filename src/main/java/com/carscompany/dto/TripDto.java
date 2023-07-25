@@ -1,8 +1,8 @@
 package com.carscompany.dto;
 
-import com.carscompany.model.Car;
-import com.carscompany.model.Employee;
 import java.time.LocalDate;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -12,9 +12,12 @@ import lombok.Data;
 @Builder
 public class TripDto {
   private Long id;
-
+  @NotBlank(message = "El empleado es requerido")
+  @NotNull(message = "El empleado es requerido")
   private EmployeeDto employeeId;
 
+  @NotBlank(message = "El automovil es requerido")
+  @NotNull(message = "El automovil es requerido")
   private CarDto carId;
 
   private LocalDate retirementDate;

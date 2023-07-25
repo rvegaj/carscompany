@@ -1,7 +1,9 @@
 package com.carscompany.service;
 
+import com.carscompany.common.Constants;
 import com.carscompany.dao.CarRepository;
 import com.carscompany.dto.CarDto;
+import com.carscompany.infraestructure.web.exceptions.ExceptionDataQuery;
 import com.carscompany.mapper.CarMapper;
 import com.carscompany.model.Car;
 import com.carscompany.model.Employee;
@@ -45,12 +47,21 @@ public class CarServiceImpl implements CarService{
 
   @Override
   public CarDto getCar(Long id) {
-    Optional<Car> response = carRepository.findById(id);
-    return response.map(carMapper::carModelToCarDto).orElse(null);
+    try{
+      Optional<Car> response = carRepository.findById(id);
+      return response.map(carMapper::carModelToCarDto).orElse(null);
+    } catch (Exception e){
+      throw new ExceptionDataQuery(Constants.MESSAGE_ERROR_QUERY_DATA);
+    }
+
   }
   @Override
   public List<CarDto> findCarsInUse() {
-    return carMapper.listCarModelToListCarDto(carRepository.findCarsInUse());
+    try{
+      return carMapper.listCarModelToListCarDto(carRepository.findCarsInUse());
+    } catch (Exception e){
+      throw new ExceptionDataQuery(Constants.MESSAGE_ERROR_QUERY_DATA);
+    }
   }
 
 }

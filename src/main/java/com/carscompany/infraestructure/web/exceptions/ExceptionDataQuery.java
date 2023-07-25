@@ -3,7 +3,7 @@ package com.carscompany.infraestructure.web.exceptions;
 import lombok.Getter;
 
 @Getter
-public class ExceptionPasswordInvalid extends RuntimeException {
+public class ExceptionDataQuery extends RuntimeException {
 
 	/**
 	 *
@@ -11,7 +11,7 @@ public class ExceptionPasswordInvalid extends RuntimeException {
 	private static final long serialVersionUID = 1L;
 	private String message;
 
-	public ExceptionPasswordInvalid(String message) {
+	public ExceptionDataQuery(String message) {
 		super(message);
 		this.message = message;
 	}
