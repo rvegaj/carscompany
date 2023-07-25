@@ -36,7 +36,7 @@ public class ErrorHandler  extends ResponseEntityExceptionHandler {
   }
 
   @ExceptionHandler(ExceptionDataQuery.class)
-  public ResponseEntity<ErrorResponse> methodQueryDataException(HttpServletRequest request, ExceptionRequestInvalid e) {
+  public ResponseEntity<ErrorResponse> methodQueryDataException(HttpServletRequest request, ExceptionDataQuery e) {
     this.printErrorRequest(request);
     ErrorResponse errorResponse = new ErrorResponse();
     errorResponse.setMessage(e.getMessage());

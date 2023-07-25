@@ -18,8 +18,8 @@ public interface TripRepository extends CrudRepository<Trip, Long> {
   List<Trip> findTripsByMonthAndYear(Integer month, Integer year);
 
   @Query(value = "SELECT count(1) FROM Trip t "
-                + "WHERE t.employeeId.id = ?1 AND "
-                + "t.carId.id = ?2 AND "
+                + "WHERE (t.employeeId.id = ?1 OR "
+                + "t.carId.id = ?2 )AND "
                 + "t.deliveryDate IS NULL")
   Long findTripsWithCarInUseByEmployee(Long employeeId, Long carId);
 }

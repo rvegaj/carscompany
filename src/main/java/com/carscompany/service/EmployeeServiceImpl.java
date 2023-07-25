@@ -52,6 +52,7 @@ public class EmployeeServiceImpl implements EmployeeService{
 
   @Override
   public String deleteEmployee(Long id) {
+    validationService.validationRequest(id);
     Optional<Employee> employee = employeeRepository.findById(id);
     if (employee.isPresent()) {
       try {
@@ -61,7 +62,7 @@ public class EmployeeServiceImpl implements EmployeeService{
         throw new ExceptionDataQuery(Constants.MESSAGE_ERROR_DELETE_EMPLOYEE);
       }
     } else
-      return Constants.MESSAGE_SUCESS_DELETE_EMPLOYEE;
+      return Constants.MESSAGE_ERROR_NOT_FOUND_DELETE_EMPLOYEE;
 
   }
   @Override
