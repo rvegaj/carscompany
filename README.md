@@ -1,7 +1,8 @@
 
 Se desarrolló un proyecto para la gestión de automoviles en la flota de una empresa por parte de los empleados.
 Las tecnología usasdas son:
--   Java 11, Spring Bott 2.7, Maven 3.8, Spring Data, Spring Secutiry, Open ID 3, BD Postgres, Arquitectura Orientada a Servicios
+-   Java 11, Spring Boot 2.7, Maven 3.8, Spring Data, Spring Secutiry, Open ID 3, BD Postgres, Arquitectura Orientada a Servicios
+-   Se emplearon aproximadamente 10 horas de trabajo no continuo
 Los api creados son:
   - Autenticación: http://localhost:8080/api/v1/authenticate (POST)
     Permite la validación de un usuario en Base de datos, previamente insertado para el objetivo del ejercio. Si el usuario 
