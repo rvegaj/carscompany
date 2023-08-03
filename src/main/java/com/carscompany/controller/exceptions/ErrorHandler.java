@@ -1,4 +1,4 @@
-package com.carscompany.infraestructure.web.exceptions;
+package com.carscompany.controller.exceptions;
 
 import com.carscompany.dto.ErrorResponse;
 import javax.servlet.http.HttpServletRequest;

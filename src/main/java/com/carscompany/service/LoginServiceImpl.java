@@ -4,7 +4,7 @@ import com.carscompany.common.Constants;
 import com.carscompany.config.util.JwtUtils;
 import com.carscompany.dto.TokenDto;
 import com.carscompany.dto.UserDto;
-import com.carscompany.infraestructure.web.exceptions.ExceptionInvalidCredentials;
+import com.carscompany.controller.exceptions.ExceptionInvalidCredentials;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;

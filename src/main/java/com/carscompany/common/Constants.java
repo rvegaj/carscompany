@@ -11,7 +11,7 @@ public class Constants {
   public static final String MESSAGE_ERROR_SAVE_DATA_EMPLOYEE= "El empleado a guardar no existe, debe crearlo previamente. ";
   public static final String MESSAGE_ERROR_SAVE_DATA_CAR = "El Automovil a guardar no existe, debe crearlo previamente. ";
   public static final String MESSAGE_ERROR_DELETE_DATA_CAR = "Automóvil a eliminar no existe en la base de datos. ";
-  public static final String MESSAGE_WARNING_SAVE_DATA_CAR = "El automovil a ingresar se encuentra en uso por el empleado ingresado.";
+  public static final String MESSAGE_WARNING_SAVE_DATA_CAR = "El automóvil o empleado a  ingresar se viaje activo.";
   public static final String MESSAGE_ERROR_DELIVERY_CAR = "Error al intentar devolver el automovil. ";
   public static final String MESSAGE_SUCESS_DELETE_EMPLOYEE= "Empleado eliminado exitosamente. ";
   public static final String MESSAGE_SUCESS_DELIVERY_CAR= "El automovil fue devuelto exitosamente. ";

@@ -1,4 +1,4 @@
-package com.carscompany.infraestructure.web.exceptions;
+package com.carscompany.controller.exceptions;
 
 import lombok.Getter;
 

@@ -1,4 +1,4 @@
-package com.carscompany.infraestructure.web;
+package com.carscompany.controller;
 
 import com.carscompany.dto.EmployeeDto;
 import com.carscompany.service.EmployeeService;
@@ -6,6 +6,7 @@ import java.util.List;
 import javax.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping(value = "/api")
+@CrossOrigin(origins = "http://localhost:4200/")
 public class EmployeeController {
 
   private final EmployeeService employeeService;

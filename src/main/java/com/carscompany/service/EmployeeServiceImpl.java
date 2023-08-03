@@ -4,7 +4,7 @@ import com.carscompany.common.Constants;
 import com.carscompany.common.validator.ValidationService;
 import com.carscompany.dao.EmployeeRepository;
 import com.carscompany.dto.EmployeeDto;
-import com.carscompany.infraestructure.web.exceptions.ExceptionDataQuery;
+import com.carscompany.controller.exceptions.ExceptionDataQuery;
 import com.carscompany.mapper.EmployeeMapper;
 import com.carscompany.model.Employee;
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.carscompany.infraestructure.web;
+package com.carscompany.controller;
 
 import com.carscompany.dto.TokenDto;
 import com.carscompany.dto.UserDto;
@@ -6,6 +6,7 @@ import com.carscompany.service.LoginService;
 import com.carscompany.service.UserService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping(value = "/api/v1")
+@CrossOrigin(origins = "http://localhost:4200/")
 public class AuthenticateController {
 
   private final LoginService loginService;

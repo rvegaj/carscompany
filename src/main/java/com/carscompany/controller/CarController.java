@@ -1,4 +1,4 @@
-package com.carscompany.infraestructure.web;
+package com.carscompany.controller;
 
 import com.carscompany.dto.CarDto;
 import com.carscompany.service.CarService;

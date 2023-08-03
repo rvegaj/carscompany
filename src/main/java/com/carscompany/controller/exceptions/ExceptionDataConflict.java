@@ -1,17 +1,17 @@
-package com.carscompany.infraestructure.web.exceptions;
+package com.carscompany.controller.exceptions;
 
 import lombok.Getter;
 
 @Getter
-public class ExceptionInvalidCredentials extends RuntimeException{
+public class ExceptionDataConflict extends RuntimeException{
 
     /**
-     *
+     *rvega
      */
     private static final long serialVersionUID = 1L;
     private String message;
 
-    public ExceptionInvalidCredentials(String exception){
+    public ExceptionDataConflict(String exception){
       super(exception);
       this.message = exception;
     }
