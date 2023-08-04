@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 
 public interface TripRepository extends CrudRepository<Trip, Long> {
-  Optional<Trip> findTripsByEmployeeIdIdAndCarIdId(Long employeeId, Long carId);
+  Optional<Trip> findTripsByEmployeeIdIdAndCarIdIdAndDeliveryDateIsNull(Long employeeId, Long carId);
 
   @Query(value = "SELECT t FROM Trip t "
               + " WHERE t.deliveryDate is not  null "

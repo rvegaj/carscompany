@@ -1,6 +1,7 @@
 package com.carscompany.controller;
 
 
+import com.carscompany.dto.ResponseDto;
 import com.carscompany.dto.TripDto;
 import com.carscompany.service.TripService;
 import java.util.List;
@@ -30,7 +31,7 @@ public class TripController {
   }
 
   @PutMapping(value = "/trips/{employeeId}/{carId}")
-  public ResponseEntity<String> deliveryCar(@PathVariable Long employeeId, @PathVariable Long carId)
+  public ResponseEntity<ResponseDto> deliveryCar(@PathVariable Long employeeId, @PathVariable Long carId)
       throws Exception {
     return new ResponseEntity<>(tripService.deliveryCarByEmployee(employeeId, carId), HttpStatus.OK);
   }
@@ -38,6 +39,11 @@ public class TripController {
   @GetMapping(value = "/trips/delivery")
   public ResponseEntity<List<TripDto>> findTripsByMonthAndYear(@RequestParam Integer month, @RequestParam Integer year){
     return new ResponseEntity<>(tripService.findTripsByMonthAndYear(month, year), HttpStatus.OK);
+  }
+
+  @GetMapping(value = "/trips")
+  public ResponseEntity<List<TripDto>> getAllTrip(){
+    return new ResponseEntity<>(tripService.findAll(), HttpStatus.OK);
   }
 
 
