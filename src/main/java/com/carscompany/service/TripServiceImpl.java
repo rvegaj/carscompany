@@ -37,27 +37,27 @@ public class TripServiceImpl implements TripService{
 
   @Override
   public TripDto createTrip(Long employeeId, Long carId) {
-    EmployeeDto employeeDto;
-    CarDto carDto;
+    EmployeeDto employeeDto = null;
+    CarDto carDto = null;
     try {
        employeeDto = employeeService.getEmployee(employeeId);
       if (Objects.isNull(employeeDto))
         throw new ExceptionDataConflict(Constants.MESSAGE_ERROR_SAVE_DATA_EMPLOYEE);
     } catch (Exception e){
-      throw  new RuntimeException(e.getMessage());
+      log.error(Constants.MESSAGE_ERROR_SAVE_DATA_EMPLOYEE);
     }
     try {
       carDto = carService.getCar(carId);
       if(Objects.isNull(carDto))
         throw new ExceptionDataConflict(Constants.MESSAGE_ERROR_SAVE_DATA_CAR);
     } catch (Exception e){
-      throw  new RuntimeException(e.getMessage());
+      log.error(Constants.MESSAGE_ERROR_SAVE_DATA_CAR);
     }
     try {
       if (findTripsWithCarInUseByEmployee(employeeId,carId))
         throw new ExceptionDataConflict(Constants.MESSAGE_WARNING_SAVE_DATA_CAR);
     } catch (Exception e){
-      throw  new RuntimeException(e.getMessage());
+      log.error(Constants.MESSAGE_WARNING_SAVE_DATA_CAR);
     }
 
     return tripMapper.tripModelToTripDto(tripRepository.save(tripMapper.tripDtoToTripModel(builderTripDto(employeeDto,carDto))));
